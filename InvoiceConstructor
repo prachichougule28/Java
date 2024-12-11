@@ -1,0 +1,92 @@
+package com.tcs;
+
+class InvoiceTest{ 
+
+	String part_number;
+	String part_description;
+	int quantity;
+	double  price_per_item;
+	InvoiceTest()
+	{
+		System.out.println("Parameterless constructors");
+	}
+	InvoiceTest(String n1,String d,int q,double p){
+		set_part_number(n1);
+		set_part_description(d);
+		set_quantity(q);
+		set_price_per_item(p);
+	}
+	void set_part_number(String n1)
+	{
+		part_number=n1;
+	}
+	void set_part_description(String d)
+	{
+		part_description=d;
+	}
+	void set_quantity(int q)
+	{
+		if(q<1)
+			quantity=0;
+		else
+			quantity=q;
+	}
+	void set_price_per_item(double p)
+	{
+		if(p<1)
+			price_per_item=0.0;
+		else
+			price_per_item=p;
+	}
+	
+	String get_part_number()
+	{
+		return part_number;
+	}
+	String get_part_description()
+	{
+		return part_description;
+	}
+	int get_quantity()
+	{
+		return quantity;
+	}
+	double get_price_per_item()
+	{
+		return price_per_item;
+	}
+	double calculateInvoiceAmount()
+	{
+		return (quantity*price_per_item);
+	}
+}
+
+class InvoiceConstructor {
+
+	public static void main(String[] args) {
+		
+		//InvoiceTest i=new InvoiceTest();
+		InvoiceTest i1=new InvoiceTest("a","b",100,10000);
+		InvoiceTest i2=new InvoiceTest("d","e",10,1000);
+		
+		System.out.println("part_number:"+i1.get_part_number());
+		System.out.println("part_description:"+i1.get_part_description());
+		System.out.println("quantity:"+i1.get_quantity());
+		System.out.println("price_per_item:"+i1.get_price_per_item());
+		
+		System.out.println("part_number:"+i2.get_part_number());
+		System.out.println("part_description:"+i2.get_part_description());
+		System.out.println("quantity:"+i2.get_quantity());
+		System.out.println("price_per_item:"+i2.get_price_per_item());
+		
+		System.out.println("calculate Invoice Amount:");
+		i1.calculateInvoiceAmount();
+		System.out.println(i1.calculateInvoiceAmount());
+		
+		System.out.println("calculate Invoice Amount:");
+		i2.calculateInvoiceAmount();
+		System.out.println(i2.calculateInvoiceAmount());
+		
+	}
+
+}
