@@ -1,0 +1,27 @@
+package com.tcs;
+
+import java.util.Scanner;
+
+public class ConversionNumber {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number: ");
+		int n1=sc.nextInt();
+		System.out.println("Given Number:"+n1);
+
+		String b = Integer.toBinaryString(n1);
+		System.out.println("Binary equivalent:"+b);
+
+		String o = Integer.toOctalString(n1);
+		System.out.println("Octal equivalent:"+o);
+
+		String h = Integer.toHexString(n1);
+		System.out.println("Hexadecimal equivalent:"+h);
+
+		sc.close();
+
+	}
+
+}
