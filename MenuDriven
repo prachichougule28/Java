@@ -1,0 +1,43 @@
+package com.tcs;
+
+import java.util.Scanner;
+
+public class MenuDriven {
+
+	public static void main(String[] args) {		
+		Scanner sc=new Scanner(System.in);
+		int ch=1,amount=0;
+		while(ch>0) {
+		System.out.println("0.Generate Bill");
+		System.out.println("1.Dosa   30");
+		System.out.println("2.Samosa   15");
+		System.out.println("3.Idli  10");
+		System.out.println("4.Pav Bhaji   60");
+		System.out.println("5.Bhel   40");
+		System.out.println("Enter the choice:");
+		ch=sc.nextInt();
+		switch(ch) {
+		case 1:
+			   amount+=30;
+			   break;
+		case 2:
+			   amount+=15;
+			   break;
+		case 3:
+			   amount+=10;
+			   break;
+		case 4:
+			   amount+=60;
+			   break;
+		case 5:
+			   amount+=40;
+			   break;
+		case 0:
+			  System.out.println("Total amount is:"+amount);
+			   break;
+			    
+		}
+	}
+		sc.close();
+}
+}
